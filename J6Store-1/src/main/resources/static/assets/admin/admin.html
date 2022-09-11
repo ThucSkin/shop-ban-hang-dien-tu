@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Java 6 Project Admin</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/assets/css/shopping-cart-app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <!-- Router -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+
+<body class="container" ng-app="admin-app" style="background: #CCFFFF">
+    <header class="row">
+        <img alt="" src="/assets/images/banner2.jpg" width="100%" >
+    </header>
+    <div class="row">
+        <nav class="navbar navbar-inverse" style="font-variant: small-caps;">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#!product">Products</a></li>
+                    <li><a href="#!authorize">Authorizing</a></li>
+                    <li><a href="/security/logoff">Sign Out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+   
+        <p ng-view="" />
+       
+    <footer>
+        <div class="panel panel-default">
+            <div class="panel-body text-center">
+                <h3>FPT Polytechnic &copy;2022.All right reserved</h3>
+            </div>
+        </div>
+    </footer>
+    <!-- User DEFINDED Script -->
+    <script src="/assets/admin/admin-app.js"></script>
+    <script src="/assets/admin/product/product-ctrl.js"></script>
+    <script src="/assets/admin/authority/authority-ctrl.js"></script>
+
+
+    <!-- <script src="/assets/js/shopping-cart-app.js">
+
+    </script> -->
+</body>
+
+</html>

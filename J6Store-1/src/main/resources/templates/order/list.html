@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
+
+<body>
+    <main>
+        <div class="panel panel-primary">
+            <div class="panel-heading">YOUR ORDER PURCHASED</div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Order No</th>
+                        <th>Order Date</th>
+                        <th>Shopping Address</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each=" order,state: ${orders}">
+                        <td>[[${state.index}]]</td>             
+                        <th>[[${order.id}]]</th>
+                        <th>[[${order.createDate}]]</th>
+                        <th>[[${order.address}]]</th>
+                        <th>
+                            <a th:href="@{|/order/detail/${order.id}|}" class="btn btn-default">
+                                <b class="glyphicon glyphicon-search"></b>
+                            </a>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="panel-footer text-center">
+                <button ng-click="pager.first()" class="btn btn-danger">
+                    <b class="glyphicon glyphicon-hand-up"></b>
+                </button>
+                <button ng-click="pager.prev()" class="btn btn-primary">
+                    <b class="glyphicon glyphicon-hand-left"></b>
+                </button>
+                <button class="btn btn-success">{{pager.page + 1}} of {{pager.count}}</button>
+                <button ng-click="pager.next()" class="btn btn-primary">
+                    <b class="glyphicon glyphicon-hand-right"></b>
+                </button>
+                <button ng-click="pager.last()" class="btn btn-danger">
+                    <b class="glyphicon glyphicon-hand-down"></b>
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
